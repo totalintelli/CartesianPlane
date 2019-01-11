@@ -45,7 +45,14 @@ namespace CartesianPlane
             int x = 0; // X 축의 x 좌표
             int y = 0; // X 축의 y 좌표
             int outerPadding = padding + thick;
-            graphics.DrawLine(pen, x + outerPadding, y + outerPadding, this.Width - outerPadding * 2, y + outerPadding);
+            int width = this.graph_panel.Width;
+            int height = this.graph_panel.Height;
+
+            // X축을 그린다.
+            graphics.DrawLine(pen, x + outerPadding, height - outerPadding, width - outerPadding, height - outerPadding);
+
+            // Y축을 그린다.
+            graphics.DrawLine(pen, x + outerPadding, y + outerPadding, x + outerPadding, height - outerPadding);
 
             graphics.Dispose();
         }

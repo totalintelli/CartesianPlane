@@ -28,12 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.graph_panel = new System.Windows.Forms.Panel();
+            this.SuspendLayout();
+            // 
+            // graph_panel
+            // 
+            this.graph_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.graph_panel.Location = new System.Drawing.Point(0, 0);
+            this.graph_panel.Name = "graph_panel";
+            this.graph_panel.Size = new System.Drawing.Size(384, 361);
+            this.graph_panel.TabIndex = 0;
+            this.graph_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.graph_panel_Paint);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(384, 361);
+            this.Controls.Add(this.graph_panel);
+            this.Name = "Form1";
+            this.Text = "2차원 평면 그리기";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel graph_panel;
     }
 }
 
